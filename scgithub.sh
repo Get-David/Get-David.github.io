@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#chmod +x scgithub.sh
 # 检查是否提供了自定义的提交信息
 if [ -z "$1" ]; then
     echo "错误：请提供一个提交信息作为参数。"
