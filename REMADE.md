@@ -1,5 +1,20 @@
 
+
+```python
+程序逻辑
+policy().get_action():
+    通过actor网络预测行动概率分布
+    返回：采取的哪一个行动，采取行动矩阵，行动概率分布
+memory().store:
+    保存每步的【state，行动矩阵，行动概率分布，奖励，是否终止】
+actor网络输入包含；
+    [state,优势，行动概率分布，采取行动矩阵]
+ppo_loss输入：
+    【老的采取行动矩阵，新的行动概率分布，优势函数，老的行动概率分布】
+    【a_old,pi_new(s),A(s,a),pi_old(s)】
+```
 $$
+以下是loss函数：\\
 \pi(s)=\Sigma_i\pi(a_i|s)\\
 -->A()\\
  \\
@@ -18,11 +33,14 @@ advantage =\hat{A}(s,a) = Q(s,a)-V(s)\\
 \pi_{old}(a_t|s_t)=A_t \times \pi_{old}(s_t)\\
 \pi_{\theta}(a_t|s_t)=\frac {\pi_{new}(a_t|s_t)}{\pi_{old}(a_t|s_t)}\\
 这是最后的return：\\
-mean\{min(\pi_{\theta}(a_t|s_t) * \hat{A},clipped* \hat{A}) +
+-mean\{min(\pi_{\theta}(a_t|s_t) * \hat{A},clipped* \hat{A}) +
  \beta \times \pi_{new}(a_t|s_t) \times K.log(\pi_{new}(a_t|s_t) + 1e-10))\}
 \\
-DKL(Q||P)=∑x∈XQ(x)[log(1/P(x))] - ∑x∈XQ(x)[log[1/Q(x)]]=∑x∈XQ(x)log[Q(x)/P(x)]  　　由于-log(u)是凸函数，因此有下面的不等式  　　\\
+优势函数的具体计算：\\
 
-DKL(Q||P) = -∑x∈XQ(x)log[P(x)/Q(x)] = E[-logP(x)/Q(x)] ≥ -logE[P(x)/Q(x)] = -　　log∑x∈XQ(x)P(x)/Q(x) = 0  
-
+predvalue=V(s)
+\\
+数据预处理\\
+get_all_as_tensors
+fanh
 $$
