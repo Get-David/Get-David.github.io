@@ -17,7 +17,8 @@
     
     <!-- add js -->
     <script src="js/jquery.js"></script>
-    <script src="js/turn.js"></script>              
+    <script src="js/turn.js"></script>            
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/jquery.fullscreen.js"></script>
     <script src="js/jquery.address-1.6.min.js"></script>
 	<script src="js/onload.js"></script>
@@ -34,7 +35,9 @@
 </head>
  
 <body>  
-  
+  <body onload="loadMarkdownFile()">
+    <div id="markdown-content"></div>
+</body>
 <!-- BEGIN FLIPBOOK STRUCTURE -->   
 <div data-template="true" data-cat="book7" id="fb7-ajax">  
   <div style="text-align:center;clear:both;">
@@ -198,7 +201,18 @@
                     
                     <!-- BEGIN PAGE 3 -->          
                     <div id="myfirstpage" >
-                    <iframe src="REMADE.md" width="100%" height="500px"></iframe>
+	            <title>Markdown解析示例</title>
+	            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	            <script>
+	        	function loadMarkdownFile() {
+	                    fetch('example.md')
+	                    .then(response => response.text())
+	                    .then(markdown => {
+	                        const html = marked(markdown);
+	                        document.getElementById('markdown-content').innerHTML = html;
+	              	    });
+	    		}
+	    	    </script>
 
                     </div>
                     <!-- END PAGE 3 -->
@@ -589,7 +603,6 @@ jQuery('#fb7-ajax').data('config',
 		"rtl":"false"
      })
 </script>
-
 
 </body>
 </html>
