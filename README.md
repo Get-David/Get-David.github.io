@@ -25,3 +25,4 @@ https://get-david.github.io/
 如果要更新页面，直接编辑 `index.html`。
 
 如需添加领取表单，把 `mailto:ee2258203638@qq.com` 替换为飞书表单、腾讯问卷或其他报名链接。
+当我点击教程目录哪里claude code、codex的时候应该跳转到具体的教程，也就是张哥的那个教程，但是里面html页面保持一致，github页面换成我自己的，后续我要在这个教程上自己做迭代。
