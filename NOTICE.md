@@ -1,13 +1,32 @@
-# Notice
+# Third-party notice
 
-This site references the following public project:
+The visual implementation of this project references:
 
 - Project: `stormzhang/ai-coding-guide`
 - Repository: https://github.com/stormzhang/ai-coding-guide
 - Website: https://coding.stormzhang.ai
-- License shown on GitHub: MIT
-- Copyright notice shown on GitHub: © 2026 stormzhang
+- Copyright: © 2026 stormzhang
+- License: MIT
 
-This site is a David Studio / Get-David alumni learning entry. It may reference the original project as a learning source, while the landing page structure and course positioning are adapted for David Studio's alumni training and project practice.
+Copyright (c) 2026 stormzhang
 
-If future versions reuse original article text, images, code, or other materials from `stormzhang/ai-coding-guide`, keep the MIT license notice and attribution in the repository.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+David Studio's tutorial text, branding, site structure, and interaction code
+remain part of this project. The original 92 tutorial articles are not copied.
