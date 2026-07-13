@@ -1,28 +1,33 @@
-# David Studio AI Coding 校友页
+# David Course Hub
 
-访问地址：
+David Studio 的纯静态 AI 编程教程站。当前 v2 提供：
 
-https://get-david.github.io/
+- 首页：Claude Code / Codex 双入口
+- Claude Code 中文入门教程
+- Codex 中文实战教程
+- 本地搜索、深色模式、移动端目录
+- Catppuccin 明暗主题、终端动效、阅读进度和响应式文档布局
 
-这是面向校友的 AI Coding 学习入口，内容包括：
+## 打开方式
 
-- Claude Code / Codex 入门路线
-- AI 编程标准工作流
-- 6 个 Vibe Coding 实战项目
-- 校友领取学习地图和联系入口
+直接打开 `index.html`，不需要安装依赖或启动服务。
 
-## 版权与来源
+## 验收
 
-本页面参考：
+```powershell
+python test_site.py
+```
 
-- https://github.com/stormzhang/ai-coding-guide
-- https://coding.stormzhang.ai
+## 真源规则
 
-原项目 GitHub 页面显示 MIT license。MIT 允许复制、修改、发布和商用，但需要保留 copyright notice 和 permission notice。本仓库保留来源说明，页面主体是 David Studio 面向校友的课程入口和项目训练说明。
+- 本目录是网站唯一代码真源。
+- 课程课件、作业、学员资料继续留在 `02_Projects/courses/`。
+- `Get-David/Get-David.github.io` 后续只作为发布目标。
+- 当前未自动发布，线上仍保持原状态。
 
-## 维护
+## 内容与设计边界
 
-如果要更新页面，直接编辑 `index.html`。
-
-如需添加领取表单，把 `mailto:ee2258203638@qq.com` 替换为飞书表单、腾讯问卷或其他报名链接。
-当我点击教程目录哪里claude code、codex的时候应该跳转到具体的教程，也就是张哥的那个教程，但是里面html页面保持一致，github页面换成我自己的，后续我要在这个教程上自己做迭代。
+- 页面内容为 David Studio 自有教程整理。
+- 视觉参考见 `REFERENCES.md`。
+- 与参考项目有关的许可说明见 `NOTICE.md`。
+- 不复制第三方 92 篇教程正文，也不把第三方作者标记为本项目实际贡献者。
