@@ -3,22 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Coding 指南｜Claude Code & Codex 实战</title>
-  <meta name="description" content="Claude Code、Codex、AI 编程工作流与项目实战指南。">
-  <style>
-    :root{--bg:#0b0f19;--card:#111827;--text:#f8fafc;--muted:#94a3b8;--line:rgba(148,163,184,.18);--blue:#60a5fa;--cyan:#22d3ee;--green:#4ade80;--radius:20px;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--sans);color:var(--text);background:radial-gradient(circle at 20% -10%,rgba(96,165,250,.22),transparent 34rem),radial-gradient(circle at 80% 0%,rgba(34,211,238,.15),transparent 32rem),linear-gradient(180deg,#0b0f19 0%,#0b1020 50%,#070b12 100%);line-height:1.65}a{color:inherit;text-decoration:none}a:hover{color:var(--cyan)}.wrap{width:min(1160px,calc(100% - 32px));margin:0 auto}.nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(11,15,25,.78);border-bottom:1px solid var(--line)}.navin{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800}.logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-weight:900;color:#020617;background:linear-gradient(135deg,var(--cyan),var(--green))}.links{display:flex;gap:18px;color:var(--muted);font-size:14px;flex-wrap:wrap}.search{display:inline-flex;align-items:center;gap:8px;min-width:210px;padding:9px 12px;border:1px solid var(--line);border-radius:12px;color:#64748b;background:rgba(15,23,42,.62);font-size:13px}.hero{padding:82px 0 54px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}.badge{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:999px;border:1px solid rgba(34,211,238,.26);background:rgba(34,211,238,.08);color:#a5f3fc;font-size:14px}h1{margin:22px 0 18px;font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-.07em}.grad{background:linear-gradient(135deg,#fff 0%,#93c5fd 42%,#67e8f9 70%,#86efac 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{max-width:760px;color:#cbd5e1;font-size:19px;margin:0 0 28px}.btns{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:13px;border:1px solid var(--line);background:rgba(15,23,42,.78);font-weight:700}.btn.primary{background:linear-gradient(135deg,var(--cyan),var(--green));color:#020617;border:0}.terminal{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(2,6,23,.9);box-shadow:0 30px 90px rgba(0,0,0,.36)}.term-top{height:44px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid var(--line);background:rgba(15,23,42,.72)}.dot{width:12px;height:12px;border-radius:50%}.red{background:#fb7185}.yellow{background:#facc15}.green{background:#4ade80}.term-body{padding:22px;font-family:var(--mono);font-size:14px;color:#d1fae5}.prompt{color:var(--cyan)}.dim{color:#94a3b8}.ok{color:var(--green)}section{padding:46px 0}.eyebrow{color:var(--green);font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:13px}h2{margin:8px 0 10px;font-size:clamp(28px,4vw,44px);line-height:1.08;letter-spacing:-.045em}.sub{margin:0 0 22px;color:var(--muted);max-width:760px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature,.doc,.project,.panel{border:1px solid var(--line);border-radius:var(--radius);background:rgba(15,23,42,.74)}.feature{padding:22px}.icon{width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:rgba(34,211,238,.12);color:var(--cyan);margin-bottom:14px;font-family:var(--mono);font-weight:900}.feature h3,.doc h3,.project h3{margin:0 0 8px;font-size:19px}.feature p,.doc p,.project p{margin:0;color:var(--muted);font-size:15px}.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.doc{padding:20px;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}.doc-num{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-family:var(--mono);font-weight:900;color:#020617;background:linear-gradient(135deg,var(--blue),var(--cyan))}.path{display:grid;gap:14px}.step{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(15,23,42,.62)}.week{color:var(--cyan);font-family:var(--mono);font-weight:900}.step strong{display:block;margin-bottom:4px}.step span{color:var(--muted)}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{padding:18px}.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pill{padding:5px 9px;border-radius:999px;border:1px solid rgba(148,163,184,.22);color:#cbd5e1;font-size:12px;background:rgba(148,163,184,.1)}.panel{padding:28px}.cta{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center}.list{margin:0;padding-left:20px;color:#cbd5e1}.list li{margin:8px 0}footer{padding:42px 0 58px;color:#64748b;border-top:1px solid var(--line);margin-top:34px;font-size:14px}@media(max-width:900px){.hero-grid,.features,.docs,.projects,.cta{grid-template-columns:1fr}.step,.doc{grid-template-columns:1fr}.navin{align-items:flex-start;flex-direction:column;padding:14px 0}.search{display:none}}
-  </style>
+  <meta name="description" content="David Studio AI 编程指南：Claude Code 与 Codex 中文实战教程。">
+  <title>AI 编程指南｜David Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/site.js"></script>
 </head>
-<body>
-  <nav class="nav"><div class="wrap navin"><a class="brand" href="#top"><span class="logo">AI</span><span>AI Coding 指南</span></a><div class="search">⌘K 搜索教程 / 工具 / 项目</div><div class="links"><a href="#guide">指南</a><a href="#path">路径</a><a href="#projects">项目</a><a href="#start">开始</a></div></div></nav>
-  <main id="top">
-    <section class="hero"><div class="wrap hero-grid"><div><span class="badge">Claude Code · Codex · AI 编程工作流</span><h1>在终端里，<br><span class="grad">把想法变成项目。</span></h1><p class="lead">一份面向实战的 AI Coding 指南：从工具安装、项目规则、提示词，到 Claude Code / Codex 的工程化使用，再到 6 个可展示项目。</p><div class="btns"><a class="btn primary" href="#start">开始学习</a><a class="btn" href="#guide">查看目录</a><a class="btn" href="https://github.com/Get-David" target="_blank" rel="noopener">GitHub</a></div></div><div class="terminal"><div class="term-top"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div><div class="term-body"><div><span class="prompt">$</span> codex "读取项目规则，梳理实现计划"</div><div class="dim"># 先理解目标、约束、文件结构</div><br><div><span class="prompt">$</span> claude "实现 starter / solution / tests"</div><div class="ok">✓ 生成可运行项目骨架</div><br><div><span class="prompt">$</span> codex "运行测试，修复失败用例"</div><div class="ok">✓ 测试通过，README 已补齐</div><br><div><span class="prompt">$</span> git status</div><div class="dim">下一步：Demo、讲解视频、作品集说明</div></div></div></div></section>
-    <section><div class="wrap"><div class="eyebrow">What you get</div><h2>不是聊天技巧，是项目生产流程</h2><p class="sub">AI 编程的关键不是“会问问题”，而是能把需求、代码、测试、文档和交付串成一个稳定流程。</p><div class="features"><div class="feature"><div class="icon">01</div><h3>工具上手</h3><p>Claude Code、Codex、VS Code、GitHub 的基础使用与边界。</p></div><div class="feature"><div class="icon">02</div><h3>工作流</h3><p>读项目、拆任务、改代码、跑测试、写文档、提交版本。</p></div><div class="feature"><div class="icon">03</div><h3>实战项目</h3><p>用 6 个项目把 AI 编程能力变成可展示成果。</p></div></div></div></section>
-    <section id="guide"><div class="wrap"><div class="eyebrow">Guide</div><h2>教程目录</h2><p class="sub">按工具、工作流和项目交付拆分，不需要一次看完。先跑通一个项目，再补细节。</p><div class="docs"><a class="doc" href="#path"><div class="doc-num">1</div><div><h3>Claude Code 入门</h3><p>安装、认证、读文件、改代码、权限和安全边界。</p></div></a><a class="doc" href="#path"><div class="doc-num">2</div><div><h3>Codex 实战</h3><p>计划模式、代码编辑、测试验证、提交前检查。</p></div></a><a class="doc" href="#projects"><div class="doc-num">3</div><div><h3>Vibe Coding 项目</h3><p>从提示词到可运行 Demo 的完整项目路径。</p></div></a><a class="doc" href="#start"><div class="doc-num">4</div><div><h3>作品集交付</h3><p>README、演示视频、项目复盘和简历表达。</p></div></a></div></div></section>
-    <section id="path"><div class="wrap"><div class="eyebrow">Path</div><h2>推荐学习路径</h2><div class="path"><div class="step"><div class="week">Step 01</div><div><strong>先跑通工具</strong><span>让 AI 能读取项目、理解目标、修改文件，并知道什么时候需要你确认。</span></div></div><div class="step"><div class="week">Step 02</div><div><strong>再跑通工作流</strong><span>固定使用：探索 → 计划 → 修改 → 测试 → 文档 → 复盘。</span></div></div><div class="step"><div class="week">Step 03</div><div><strong>做出第一个项目</strong><span>不要停在教程阅读，选择一个小项目完成 starter、solution、tests、README。</span></div></div><div class="step"><div class="week">Step 04</div><div><strong>包装成可展示成果</strong><span>补 Demo 截图、3 分钟讲解、项目价值和下一步改进。</span></div></div></div></div></section>
-    <section id="projects"><div class="wrap"><div class="eyebrow">Projects</div><h2>6 个实战项目</h2><div class="projects"><div class="project"><h3>AI 简历生成器</h3><p>把个人经历转换成岗位匹配的简历要点。</p><div class="pills"><span class="pill">Prompt</span><span class="pill">Streamlit</span></div></div><div class="project"><h3>文章摘要工具</h3><p>把长文档压缩成摘要、风险和行动项。</p><div class="pills"><span class="pill">LLM</span><span class="pill">文本处理</span></div></div><div class="project"><h3>图片描述助手</h3><p>生成图片描述、标题、标签和内容改写。</p><div class="pills"><span class="pill">多模态</span><span class="pill">内容生产</span></div></div><div class="project"><h3>翻译润色助手</h3><p>中英改写、邮件语气、简历表达和场景模板。</p><div class="pills"><span class="pill">Few-shot</span><span class="pill">模板</span></div></div><div class="project"><h3>数据看板生成器</h3><p>读取 CSV，生成图表、指标解释和分析报告。</p><div class="pills"><span class="pill">Pandas</span><span class="pill">EDA</span></div></div><div class="project"><h3>AI 问答机器人</h3><p>基于 FAQ / 文档搭建可测试的问答 Bot。</p><div class="pills"><span class="pill">RAG</span><span class="pill">知识库</span></div></div></div></div></section>
-    <section id="start"><div class="wrap"><div class="panel cta"><div><div class="eyebrow">Start</div><h2>从一个可运行项目开始</h2><p class="sub">如果你已经会一点 Python 或产品/运营/数据分析基础，直接从第一个项目开始；如果完全零基础，先跑通工具和环境。</p><ul class="list"><li>先选一个项目，不要同时开 6 个。</li><li>每次交付都必须有代码、README、截图或视频。</li><li>遇到问题先让 AI 读报错，再决定是否人工介入。</li></ul></div><div class="btns"><a class="btn primary" href="mailto:ee2258203638@qq.com?subject=AI%20Coding%20学习路线">获取学习路线</a><a class="btn" href="https://github.com/Get-David" target="_blank" rel="noopener">查看 GitHub</a></div></div></div></section>
+<body class="home-page">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i></span><span>AI 编程指南</span></a>
+      <button class="search-trigger" type="button" data-search-open><span class="search-icon">⌕</span><span>搜索</span><kbd>⌘ K</kbd></button>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="claude-code/index.html">Claude Code</a>
+        <a href="codex/index.html">Codex</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换深色模式"><span></span></button>
+        <a class="github-link" href="https://github.com/Get-David" target="_blank" rel="noopener" aria-label="David Studio GitHub">GH</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="hero-home">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <header class="hero-nav">
+      <a class="hero-brand" href="index.html">david<span>.</span>studio<i></i></a>
+      <nav aria-label="教程入口"><a href="claude-code/index.html">Claude Code</a><a href="codex/index.html">Codex</a></nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <span class="hero-badge"><i></i> Claude Code · Codex · 实战教程</span>
+        <h1>在终端里，<br><em>长出生产力</em></h1>
+        <p class="hero-lead">面向初学者的 AI 编程指南。从理解工具到跑通真实项目，把 Agent 变成你最快的那只手。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="claude-code/index.html">从 Claude Code 开始 →</a>
+          <a class="ghost-button" href="codex/index.html">Codex 篇</a>
+        </div>
+      </div>
+
+      <div class="terminal-demo reveal" data-terminal-demo title="点击重播">
+        <div class="terminal-bar"><span class="red"></span><span class="yellow"></span><span class="green"></span><b>claude</b></div>
+        <div class="terminal-copy">
+          <div class="cc-header">
+            <span class="cc-logo" aria-hidden="true"><i></i><i></i></span>
+            <div><strong>Claude Code</strong> <span>v2.1.183</span><small>Opus · David Studio</small></div>
+          </div>
+          <div class="terminal-conversation">
+            <p class="terminal-user"><span>›</span> 先读取项目规则，给出计划，再修改网站</p>
+            <p class="terminal-muted">● 我会先检查现有页面、样式与验收约束。</p>
+            <p><span class="success">✓</span> Read AGENTS.md</p>
+            <p><span class="success">✓</span> Read index.html, styles.css, site.js</p>
+            <p class="terminal-muted">● 计划</p>
+            <p class="terminal-step"><b>1.</b> 对齐视觉系统与首页结构</p>
+            <p class="terminal-step"><b>2.</b> 统一教程页和响应式布局</p>
+            <p class="terminal-step"><b>3.</b> 运行测试并检查页面</p>
+            <p class="terminal-answer">现在开始执行第一步。</p>
+          </div>
+          <div class="terminal-input"><span>›</span><i class="cursor"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="track-grid reveal" aria-label="教程路线">
+      <a class="track-card" href="claude-code/index.html">
+        <div class="track-meta"><span>8 节</span><b>→</b></div>
+        <h2>Claude Code 篇</h2>
+        <p>从工具定位、项目规则，到权限、上下文与可验证的工程工作流。</p>
+      </a>
+      <a class="track-card" href="codex/index.html">
+        <div class="track-meta"><span>8 节</span><b>→</b></div>
+        <h2>Codex 篇</h2>
+        <p>四种入口、AGENTS.md、沙箱审批、计划、测试与工程化交付。</p>
+      </a>
+    </section>
   </main>
-  <footer><div class="wrap"><div>© 2026 Get-David / David Studio. AI Coding Guide.</div><div><a href="NOTICE.md">许可说明</a> · <a href="README.md">站点说明</a></div></div></footer>
+
+  <dialog class="search-dialog" data-search-dialog>
+    <form method="dialog" class="search-panel">
+      <div class="search-box"><span>⌕</span><input type="search" placeholder="搜索 Claude Code、Codex 或工作流" data-search-input autocomplete="off"><button value="close" aria-label="关闭搜索">ESC</button></div>
+      <div class="search-results" data-search-results></div>
+    </form>
+  </dialog>
 </body>
 </html>
